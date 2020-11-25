@@ -26,15 +26,21 @@
         <div class="layui-form-item">
           <label class="layui-form-label">用户昵称</label>
           <div class="layui-input-block">
-            <input type="text" name="nickname" required lay-verify="required" placeholder="用户昵称" autocomplete="off"
-              class="layui-input">
+            <input type="text" name="nickname" id='nickname' required lay-verify="required" placeholder="用户昵称"
+              autocomplete="off" class="layui-input">
           </div>
         </div>
         <div class="layui-form-item">
           <label class="layui-form-label">用户邮箱</label>
           <div class="layui-input-block">
-            <input type="email" name="email" required lay-verify="required" placeholder="用户邮箱" autocomplete="off"
-              class="layui-input">
+            <input type="email" name="email" id='email' required lay-verify="required" placeholder="用户邮箱"
+              autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn submitBtn" lay-submit lay-filter="formDemo">提交修改</button>
+            <button type="reset" class="layui-btn layui-btn-primary restBtn">重置</button>
           </div>
         </div>
       </form>

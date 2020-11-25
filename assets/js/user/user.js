@@ -71,6 +71,6 @@ $(function () {
   $('.restBtn').on('click', function (e) {
     e.preventDefault();
     getInfo();
-  }); fff
+  });
   //f'f'f
 })

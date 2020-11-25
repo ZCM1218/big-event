@@ -1,5 +1,19 @@
 $(function () {
   let layer = layui.layer;
+  getAvatarandName();
+  $('.logout').on('click', function (e) {
+    e.preventDefault();
+    layer.confirm('确认退出?', { icon: 3, title: '提示' }, function (index) {
+      //do something
+      localStorage.removeItem('token');
+      location.href = 'login.html';
+      layer.close(index);
+    });
+  })
+})
+
+// 封装全局函数，可通过window获取，给修改用户信息界面使用
+function getAvatarandName() {
   $.ajax({
     url: '/my/userinfo',
     // headers: {
@@ -23,13 +37,4 @@ $(function () {
       }
     }
   });
-  $('.logout').on('click', function (e) {
-    e.preventDefault();
-    layer.confirm('确认退出?', { icon: 3, title: '提示' }, function (index) {
-      //do something
-      localStorage.removeItem('token');
-      location.href = 'login.html';
-      layer.close(index);
-    });
-  })
-})
+}

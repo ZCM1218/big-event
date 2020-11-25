@@ -10,7 +10,7 @@ $.ajaxPrefilter(function (options) {
   }
 
   options.complete = function (xhr) {
-    console.log(xhr);
+    // console.log(xhr);
     if (xhr.responseJSON.status === 1 && xhr.responseJSON.message === '身份认证失败！') {
       localStorage.removeItem('token');
       // 跳转到登录页面

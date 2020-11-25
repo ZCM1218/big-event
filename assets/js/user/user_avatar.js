@@ -23,6 +23,7 @@ $(function () {
   })
   $('.uploadAvatar').on('change', function (e) {
     console.log(e);
+    // 获取到文件
     var file = e.target.files[0];
     console.log(file);
     var newImgURL = URL.createObjectURL(file)

@@ -9,6 +9,7 @@ $.ajaxPrefilter(function (options) {
     };
   }
 
+  // 限制用户权限
   options.complete = function (xhr) {
     // console.log(xhr);
     if (xhr.responseJSON.status === 1 && xhr.responseJSON.message === '身份认证失败！') {

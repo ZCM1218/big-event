@@ -20,7 +20,10 @@ $(function () {
   }
   getInfo();
   $(".userInfo").on('submit', function (e) {
+    // $(".submitBtn").on('click', function (e) {
+    console.dir(this);
     e.preventDefault();
+
     $.ajax({
       type: 'POST',
       url: '/my/userinfo',
@@ -47,5 +50,5 @@ $(function () {
     e.preventDefault();
     getInfo();
   });
-  //f'f'f
 })
+

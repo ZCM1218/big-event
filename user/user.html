@@ -16,6 +16,14 @@
     <div class="layui-card-header">修改用户信息</div>
     <div class="layui-card-body">
       <form class="layui-form userInfo" lay-filter="formTest">
+        <!-- 通过name将res中的内容填充到表单中对应name属性的input中，所以要存储id就可以加一个name为id的表单来存 -->
+        <div class="layui-form-item" style='display: none;'>
+          <label class="layui-form-label">id</label>
+          <div class="layui-input-block">
+            <input type="text" name="id" required lay-verify="required" placeholder="登录名称" autocomplete="off"
+              class="layui-input" readonly>
+          </div>
+        </div>
         <div class="layui-form-item">
           <label class="layui-form-label">登录名称</label>
           <div class="layui-input-block">
@@ -50,7 +58,7 @@
 
   <script src="/assets/lib/jquery.js"></script>
   <script src="/assets/lib/layui/layui.all.js"></script>
-  <script src="/assets/js/ajaxBase.js"></script>
+  <script src="/assets/js/home/ajaxBase.js"></script>
   <script src="/assets/js/user/user.js"></script>
 </body>
 

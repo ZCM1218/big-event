@@ -1,7 +1,7 @@
 $(function () {
   let form = layui.form;
   let layer = layui.layer;
-
+  // 修改密码时的表单校验
   form.verify({
     pass: [
       /^[\S]{6,12}$/
@@ -18,19 +18,14 @@ $(function () {
       }
     }
   })
-
+  // 提交修改密码请求
   $('.layui-form').on('submit', function (e) {
-    // $('.layui-btn').on('click', function (e) {
     e.preventDefault();
-    // console.log('hh');
-    // 阻止按钮的默认事件会和layui给按钮做的点击事件有冲突
-    // return false;
     $.ajax({
       type: 'POST',
       url: '/my/updatepwd',
       data: $('.layui-form').serialize(),
       success: function (res) {
-        // console.log(res);
         if (res.status !== 0) {
           layer.msg(res.message);
         }

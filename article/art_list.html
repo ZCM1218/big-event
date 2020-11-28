@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+  <link rel="stylesheet" href="/assets/lib/cropper/cropper.css" />
+  <link rel="stylesheet" href="/assets/css/article/art_list.css">
+</head>
+
+<body>
+
+  <div class="layui-card">
+    <div class="layui-card-header">卡片面板</div>
+    <div class="layui-card-body">
+      <form class="layui-form" action="">
+        <div class="layui-form-item allCate">
+          <div class="layui-input-block">
+            <select name="city" lay-verify="required" id='allCate'>
+              <option value="">所有分类</option>
+              <!-- <option value="0">北京</option> -->
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item allState">
+          <div class="layui-input-block">
+            <select name="city" lay-verify="required" id='allState'>
+              <option value="">所有状态</option>
+              <!-- <option value="0">已发布</option> -->
+              <!-- <option value="0">北京</option> -->
+            </select>
+          </div>
+        </div>
+        <button type="button" class="layui-btn">筛选</button>
+      </form>
+      <table class="layui-table">
+        <colgroup>
+          <col>
+          <col width="200">
+          <col width="200">
+          <col width="200">
+          <col width="200">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>文章标题</th>
+            <th>分类</th>
+            <th>发表时间</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script type='text/html' id='allCateTpl'>
+    {{each data v i}}
+    <option value="0">{{v.cate_name}}</option>
+    {{/each}}
+  </script>
+  <script type='text/html' id='allStateTpl'>
+    {{each data v i}}
+    <option value="0">{{v.state}}</option>
+    {{/each}}
+  </script>
+  <script type='text/html' id='artListTpl'>
+    {{each data v i}}
+    <tr>
+      <td>{{v.title}}</td>
+      <td>{{v.cate_name}}</td>
+      <td>{{v.pub_date}}</td>
+      <td>{{v.state}}</td>
+      <td>
+        <button type="button" class="layui-btn layui-btn-xs editBtn" data-id='{{v.Id}}'>编辑</button>
+        <button type="button" class="layui-btn layui-btn-danger layui-btn-xs delBtn">删除</button>
+      </td>
+    </tr>
+    {{/each}}
+  </script>
+  <script src="/assets/lib/jquery.js"></script>
+  <script src="/assets/lib/template-web.js"></script>
+  <script src="/assets/lib/layui/layui.all.js"></script>
+  <script src="/assets/js/home/ajaxBase.js"></script>
+  <script src="/assets/js/article/art_list.js"></script>
+
+</body>
+
+</html>

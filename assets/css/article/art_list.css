@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 15px;
+}
+
+.allCate,.allState {
+  width: 200px;
+  display: inline-block;
+}
+.layui-input-block {
+  margin:0;
+}

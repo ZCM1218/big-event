@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+  <link rel="stylesheet" href="/assets/lib/cropper/cropper.css" />
+  <link rel="stylesheet" href="/assets/css/article/art_add.css">
+</head>
+
+<body>
+  <div class="layui-card">
+    <div class="layui-card-header">卡片面板</div>
+    <div class="layui-card-body">
+      <form class="layui-form" action="">
+        <div class="layui-form-item">
+          <label class="layui-form-label">文章标题</label>
+          <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off"
+              class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">文章类别</label>
+          <div class="layui-input-block">
+            <select name="city" lay-verify="required">
+              <option value="">请选择文章类别</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script type='text/html' id='artCateTpl'>
+    {{each data v i}}
+    <option value="0">{{v.name}}</option>
+    {{/each}}
+  </script>
+  <script src="/assets/lib/jquery.js"></script>
+  <script src="/assets/lib/template-web.js"></script>
+  <script src="/assets/lib/layui/layui.all.js"></script>
+  <script src="/assets/js/home/ajaxBase.js"></script>
+  <script src="/assets/js/article/art_add.js"></script>
+</body>
+
+</html>

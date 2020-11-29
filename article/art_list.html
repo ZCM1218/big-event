@@ -13,27 +13,27 @@
 <body>
 
   <div class="layui-card">
-    <div class="layui-card-header">卡片面板</div>
+    <div class="layui-card-header">文章列表</div>
     <div class="layui-card-body">
-      <form class="layui-form" action="">
+      <form class="layui-form">
         <div class="layui-form-item allCate">
           <div class="layui-input-block">
-            <select name="city" lay-verify="required" id='allCate'>
+            <select name="cate_id" lay-verify="required" id='allCate'>
               <option value="">所有分类</option>
-              <!-- <option value="0">北京</option> -->
             </select>
           </div>
         </div>
         <div class="layui-form-item allState">
           <div class="layui-input-block">
-            <select name="city" lay-verify="required" id='allState'>
+            <select name="state" lay-verify="required" id='allState'>
               <option value="">所有状态</option>
-              <!-- <option value="0">已发布</option> -->
+              <option value="已发布">已发布</option>
+              <option value="草稿">草稿</option>
               <!-- <option value="0">北京</option> -->
             </select>
           </div>
         </div>
-        <button type="button" class="layui-btn">筛选</button>
+        <button class="layui-btn">筛选</button>
       </form>
       <table class="layui-table">
         <colgroup>
@@ -55,18 +55,14 @@
         <tbody>
         </tbody>
       </table>
+      <div id='artList'>
+      </div>
+
     </div>
   </div>
-  <script type='text/html' id='allCateTpl'>
-    {{each data v i}}
-    <option value="0">{{v.cate_name}}</option>
-    {{/each}}
-  </script>
-  <script type='text/html' id='allStateTpl'>
-    {{each data v i}}
-    <option value="0">{{v.state}}</option>
-    {{/each}}
-  </script>
+
+
+
   <script type='text/html' id='artListTpl'>
     {{each data v i}}
     <tr>
@@ -75,12 +71,13 @@
       <td>{{v.pub_date}}</td>
       <td>{{v.state}}</td>
       <td>
-        <button type="button" class="layui-btn layui-btn-xs editBtn" data-id='{{v.Id}}'>编辑</button>
-        <button type="button" class="layui-btn layui-btn-danger layui-btn-xs delBtn">删除</button>
+        <button type="button" class="layui-btn layui-btn-xs editBtn" data-id="{{v.Id}}">编辑</button>
+        <button type="button" class="layui-btn layui-btn-danger layui-btn-xs delBtn" data-id="{{v.Id}}">删除</button>
       </td>
     </tr>
     {{/each}}
   </script>
+
   <script src="/assets/lib/jquery.js"></script>
   <script src="/assets/lib/template-web.js"></script>
   <script src="/assets/lib/layui/layui.all.js"></script>

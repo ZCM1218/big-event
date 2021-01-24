@@ -1,7 +1,7 @@
 // ajax基础配置，根路径
 $.ajaxPrefilter(function (options) {
   // options为ajax的配置项(对象)
-  options.url = 'http://ajax.frontend.itheima.net' + options.url;
+  options.url = 'http://api-breakingnews-web.itheima.net' + options.url;
   // 配置需要请求头的请求,根据接口文档来设置
   if (options.url.indexOf('/my/') !== -1) {
     options.headers = {
